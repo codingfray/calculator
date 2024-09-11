@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <input id="operands" type="text">
+    <button onclick="calculate()">Click Me</button>
+    <p id="result"></p>
+</body>
+
+</html>
+<script>
+    // let String = 'wow'
+    // string[0] = 's' //This will not work because Strings are immutable
+    // console.log(String);
+
+    // let array = new Array(7).fill('hello')
+    // let arr = ['wow', '']
+    // arr[1] = 'hello'
+    // console.log(arr);
+    // console.log(typeof array);
+    // console.log(Array.isArray(array));
+
+
+    function calculate() {
+        let operands = document.getElementById('operands').value;
+        let theNumbers = operands.split('+');
+        console.log(theNumbers);
+        let sumNumbers = Number(theNumbers[0]) + Number(theNumbers[1])
+        console.log(sumNumbers);
+        let result = document.getElementById('result')
+        result.innerHTML = sumNumbers;
+
+
+    }
+
+</script>

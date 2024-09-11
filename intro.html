@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <P id="paragraph" onclick="run()">Hello World</P>
+    <button onclick="dropDown()">Click</button>
+    <button onclick="pressBtn()">Internal</button>
+    <button onclick="testExternal()">External</button>
+
+    <h1 id="tag"></h1>
+    <input type="text" id="myText" onkeydown="writeSomething()">
+
+
+    <script src="intro.js"></script>
+    <script>
+        // let myName = 'Olojo' //Assignment, can only be introduced once. Syntax: (variable container) (vvariable name) = '(Object)'
+        // myName = 'David' //Reassignment
+        // var theName = 'Mayowa' //var and let can be said to act alike
+        // const aName = 'Stephen' //Constant variables cannot be reassigned
+        // // aName = 'Samson' 
+        // console.log(myName);
+        // console.log(aName);
+
+        // let paragraphTag = document.getElementById('paragraph')
+        // console.log(paragraphTag);
+        // paragraphTag.style.backgroundColor = 'yellow'
+        // // paragraphTag.style.position = 'fixed'
+        // // paragraphTag.style.top = 0
+        // paragraphTag.style.margin = 0
+        // paragraphTag.style.display = 'none'
+
+        // function dropDown() {
+        //     paragraphTag.style.display = 'block'
+        // }
+
+        // let bTag = document.createElement('b')
+        // bTag.innerHTML = 'I am coming from your js'
+        // paragraphTag.append(bTag)
+
+        function pressBtn() {
+            alert('I just pressed this button')
+            console.log('If you click Internal, this button will show')
+            console.log('Strings can also work with single quotes');
+            console.log(4 / 2);
+            console.log('30' * '60');
+            console.log('30' + '60');
+            console.log('30' + 60);
+        }
+
+        //Data Types
+        //Strings: Characters or set of characters that are in quotes. It can be either single or double quotes.
+        //Numbers: They do not need quotes. 
+        //Boolean: A true or false value
+        //Array: It is a collection of data inside a square bracket. It is referenced through it's index. 
+        //Object: A collection of data inside a curly bracket. It is a collection of data in key-value pair. 
+        //Undefined: A variable declared that does not have a value. 
+
+        console.log('Daniel' == 'daniel');
+        console.log(20 == '20'); //Equality operator comparing just the values
+        console.log(20 === '20'); //Equality operator comparing the value and data type
+
+        let name = 'Olojo';
+        console.log(name);
+        console.log('name');
+        console.log(name == 'name');
+        console.log(name == 'Olojo');
+
+        var myClass = 'JS';
+        console.log(myClass);
+
+        const price = 400;
+
+        console.log(price);
+
+        let test;
+        console.log(test);
+
+        let theValue = null;
+
+        test = null;
+        console.log(test);
+        // document.getElementById('tag').innerHTML = myClass;
+        function writeSomething() {
+            console.log(document.getElementById('myText').value = theValue);
+
+        }
+
+        const string = `hello world`;
+        let string1 = 'hello world';
+        let string2 = "hello world";
+        let wStorage = string[6];
+        console.log(wStorage);
+        console.log(string.length);
+
+        //My name is Asabeneh Yetayeh, I am a JavaScript teacher
+        let space = ' '           // an empty space string
+        let firstName = 'Asabeneh '
+        let lastName = 'Yetayeh'
+        let language = 'JavaScript '
+        let job = 'teacher'
+        let thirdName = 'Muiz'
+
+        let sentence = 'My name is' + space + firstName + space + lastName + ', I am a' + space + language + space + job + '.';
+        console.log(sentence);
+
+        let sentence1 = `My name is ${firstName} ${lastName}, I am a ${language} ${job}.`
+        console.log(sentence1);
+
+        let a = 5;
+        let b = 10;
+
+        let newSentence = 'the sum of ' + a + ' and ' + b + ' is ' + (a + b);
+        let newSentence1 = `the sum of ${a} and ${b} is ${a + b}`; //The back tick is called aa temporal literal and the process of combining different strings togeter with thee baack tick is string interpolation. 
+        console.log(newSentence);
+        console.log(newSentence1);
+
+        let value = Number('4') + 9;
+        let value1 = parseInt('4') + 9;
+        let value2 = +('4') + 9;
+        console.log(typeof value);
+        console.log(value);
+        console.log(value1);
+        console.log(value2);
+
+        //ways of outputing data in JS: Console, Alert, innerHTML
+    </script>
+</body>
+
+</html>
