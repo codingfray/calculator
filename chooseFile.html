@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" name="" accept=".jpg, .png" id="" onchange="pickPicture(event)">
+    <img alt="" id="myImg">
+</body>
+
+</html>
+<script>
+    function pickPicture(ev) {
+        let file = ev.target.files[0]
+        console.log(file);
+        let reader = new FileReader()
+
+        if (file) {
+            reader.readAsDataURL(file)
+        }
+
+        reader.addEventListener('load', (ev) => {
+            console.log(ev);
+            let url = ev.target.result
+            myImg.src = url
+            myImg.style.width = '300px'
+            myImg.style.height = '300px'
+            // console.log(url);
+
+        })
+    }
+
+    let date = new Date()
+    console.log(date.getFullYear());
+    console.log(date.getTime());
+    console.log(date.toLocaleTimeString().slice(5, 8));
+    let timeToRemove = date.toLocaleTimeString().slice(5, 8)
+    console.log(date.toLocaleTimeString().replace(timeToRemove, ''));
+
+    function convertDate(params) {
+        let year = params.getFullYear()
+        let day = params.getDate()
+        let month = params.getMonth() + 1
+    }
+
+    let thisObj = [
+        { name: 29 },
+        { name: 100 },
+        { name: 600 },
+        { name: 0 },
+        { name: 342 }
+    ]
+
+    let newObj = thisObj.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1
+        } else if (a.name > b.name) {
+            return 1
+        } else {
+
+            return 0
+        }
+
+    })
+    console.log(newObj);
+
+
+</script>

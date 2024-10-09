@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+</head>
+
+<body>
+    <div>
+        <video id="vid" autoplay></video>
+        <button id="pic" onclick="capture()">Capture</button>
+    </div>
+
+    <button id="cam" onclick="startCam()">Start</button>
+    <canvas width="100px" height="100px" id="canvas"></canvas>
+
+    <img src="" id="img" alt="">
+</body>
+
+</html>
+<script>
+    async function startCam() {
+        let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        vid.srcObject = stream
+    }
+
+    function capture() {
+        canvas.getContext('2d').drawImage(vid, 0, 0, canvas.width, canvas.height)
+        let pic = canvas.toDataURL('/image/jpeg')
+        console.log(pic);
+        img.src = pic
+    }
+</script>
